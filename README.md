@@ -2,11 +2,11 @@
 
 This basic Angular app has been created for course 3 (Angluar Fundamentals) in the Full stack JavaScript nanodegree.
 
-# Copyright
+## Copyright
 
 This project was created by Mike Poole.
 
-# Framework
+## Framework
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
