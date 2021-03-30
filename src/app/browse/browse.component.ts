@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CartService } from '../services/cart.service';
+
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
 
@@ -15,6 +17,7 @@ export class BrowseComponent implements OnInit {
   ];
 
   constructor(
+    public cartService: CartService,
     private productService: ProductService
   ) {}
 
