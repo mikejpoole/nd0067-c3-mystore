@@ -10,16 +10,16 @@
         <table>
             <tr>
                 <th>Product</th>
-                <th>Quantity</th>                
+                <th style="text-align: center;">Quantity</th>                
                 <th style="text-align: right;">Price Each</th>
                 <th style="text-align: right;">Total Price</th>
             </tr>
 
             <tr *ngFor="let item of items; let i = index;">
                 <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-                <td style="text-align: right;">&pound;{{item.price}}</td>
-                <td style="text-align: right;">&pound;{{item.totalPrice}}</td>
+                <td style="text-align: center;">{{item.quantity}}</td>
+                <td style="text-align: right;">&pound;{{item.price | number:'1.2-2'}}</td>
+                <td style="text-align: right;">&pound;{{item.totalPrice | number:'1.2-2'}}</td>
                 <td><i class="far fa-trash-alt" 
                         title="Remove {{item.name}} from your cart"
                         (click)="cartService.removeProductFromCart(i)"></i></td>
@@ -32,5 +32,7 @@
         </table>
     </div>
 
-    <ng-template #emptyCartWrapper>Your cart is empty</ng-template>
+    <ng-template #emptyCartWrapper>
+        <p>Your cart is empty.</p>
+        <p>Would you like to <a routerLink="/">take a look at the products</a>?</p></ng-template>
 </main>
