@@ -15,5 +15,34 @@ body{
         background: #fff;
         max-width: 1000px;
         margin: 20px auto;
+
+        // Browse Page
+        #productGrid{
+            display: grid;
+            grid-template-columns: auto auto auto;
+
+            .product-cell{
+                img{
+                    width: 200px;
+                }
+            }
+        }
+
+
+        // Product Page
+
+
+
+        // Cart
+
+
+
+        // Checkout
+
+
+
+        // Order confirmation
+
+
     }
 }
