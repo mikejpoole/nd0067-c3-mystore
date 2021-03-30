@@ -10,6 +10,12 @@ This project was created by Mike Poole.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
+
+## Libraries
+
+The lovely [NGX-Toastr](https://github.com/scttcper/ngx-toastr) library is used for notifications
+
+
 ## Installation
 
 To install this project, including all its dependencies, run `npm install`.

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Cart, ActiveCart } from '../models/cart.model';
 import { Product } from '../models/product.model';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,9 @@ import { Product } from '../models/product.model';
 export class CartService {
   private cart: Cart = new ActiveCart();
 
-  constructor() {}
+  constructor(
+    private toastr: ToastrService
+  ) {}
 
   getCart(): Cart {
     console.log('Getting the cart', this.cart);
@@ -26,6 +30,17 @@ export class CartService {
     this.cart.totalPrice += product.totalPrice;
 
     console.log(this.cart);
+
+    let message = '';
+
+    if (quantity > 1) {
+      message = quantity + ' ' + product.name + 's have been added to your cart.';
+    } else {
+      message = 'A ' + product.name + ' has been added to your cart.';
+    }
+
+
+    this.toastr.success(message);
 
     return this.cart;
   }
