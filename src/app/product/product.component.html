@@ -1,5 +1,24 @@
 <app-navbar></app-navbar>
 
-<main *ngIf="product">
-    <h1>{{product.name}}</h1>
+<main *ngIf="product" id="product" style="background-image: url('{{product.url}}');">
+    <div id="detail" class="product{{product.id}}">
+        <h1>{{product.name}}</h1>
+        {{product.description}}
+    </div>
+
+    <div id="price" class="product{{product.id}}">
+        &pound;{{product.price}} each
+
+        <form [formGroup]="form" (ngSubmit)="addToCart()">
+            Quantity
+            <select formControlName="quantity">
+              <option *ngFor="let item of [].constructor(10); let i = index" 
+                        [value]="i+1">
+                {{i+1}}
+              </option>
+            </select>
+
+            <br><button>Add to cart</button>
+        </form>        
+    </div>
 </main>
