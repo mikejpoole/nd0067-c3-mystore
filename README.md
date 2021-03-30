@@ -10,7 +10,9 @@ This project was created by Mike Poole.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
-If Angular is not installed on your machine it can be installed using `npm install -g @angular/cli`.
+## Installation
+
+To install this project, including all its dependencies, run `npm install`.
 
 ## Development Server
 
@@ -18,4 +20,4 @@ Run `ng serve` to spin up a dev server. Navigate to `http://localhost:4200/`. Th
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+If you wish to host this app elsewhere use `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory.
