@@ -4,17 +4,43 @@ body{
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 300;
     background: #f0f0f0;
+    margin: 0;
 
     h1{
         margin: 0;
     }
 
-    main{
+    header, main{
         padding: 20px;
-        border-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
         background: #fff;
         max-width: 1000px;
-        margin: 20px auto;
+    }
+
+    header{
+        margin: 0 auto;
+
+        nav{
+            display: flex;
+
+            a{
+                text-decoration: none;
+            }
+
+            #cartLink{
+                margin-left: auto;
+                color: #000;
+                font-size: 28px;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    main{
+        margin: 20px auto; 
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;        
 
         // Browse Page
         #productGrid{

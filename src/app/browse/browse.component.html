@@ -1,12 +1,13 @@
-<main>
-    <h1>Browse our Products</h1>
+<app-navbar></app-navbar>
 
+<main>
     <div id="productGrid" *ngIf="products.length > 0">
         <div class="product-cell" *ngFor="let product of products">
             <h2>{{product.name}}</h2>
             <a routerLink="product/{{product.id}}"><img src="{{product.url}}"></a>
             <!-- <br>{{product.description}} -->
             <br>&pound;{{product.price}}
+            <br><button><i class="fas fa-cart-plus"></i></button>
         </div>
     </div>
 </main>
