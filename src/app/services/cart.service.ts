@@ -18,10 +18,12 @@ export class CartService {
   }
 
   addProductToCart(product: Product, quantity: number): Cart{
-    console.log('Adding', product.name, 'to cart');
+    console.log('Adding', quantity, 'of', product.name, 'to cart');
+    product.quantity = quantity;
+    product.totalPrice = product.price * quantity;
     this.cart.products.push(product);
-    this.cart.totalQuantity++;
-    this.cart.totalPrice += product.price;
+    this.cart.totalQuantity += quantity;
+    this.cart.totalPrice += product.totalPrice;
 
     console.log(this.cart);
 

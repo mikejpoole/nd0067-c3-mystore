@@ -7,11 +7,28 @@
         *ngIf="items.length > 0; else emptyCartWrapper">
         Your cart contains:
 
-        <div *ngFor="let item of items">
-            {{item.name}}
-        </div>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>                
+                <th style="text-align: right;">Price Each</th>
+                <th style="text-align: right;">Total Price</th>
+            </tr>
 
-        The total price is &pound;{{cart.totalPrice | number:'1.2-2'}} please.
+            <tr *ngFor="let item of items">
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td style="text-align: right;">&pound;{{item.price}}</td>
+                <td style="text-align: right;">&pound;{{item.totalPrice}}</td>
+                <td><i class="far fa-trash-alt" title="Remove {{item.name}} from your cart"></i></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" style="text-align: right;">The total price is:</td>
+                <td style="text-align: right;">&pound;{{cart.totalPrice | number:'1.2-2'}}</td>
+                <td></td>
+            </tr>
+        </table>
     </div>
 
     <ng-template #emptyCartWrapper>Your cart is empty</ng-template>

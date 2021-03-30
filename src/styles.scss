@@ -59,10 +59,10 @@ body{
         margin: 20px auto; 
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;        
+        max-width: 1000px;
 
         // Browse Page
         #productGrid{
-            max-width: 1000px;
             display: grid;
             grid-gap: 30px;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -116,12 +116,18 @@ body{
         }
 
 
-        // Product Page
 
 
 
         // Cart
+        table{
+            margin: 20px 0px;
+            width: 100%;
 
+            th{
+                text-align: left;
+            }
+        }
 
 
         // Checkout
@@ -132,4 +138,61 @@ body{
 
 
     }
+
+
+    // Product Page
+    #product{
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        font-size: 20px;
+        font-weight: bold;;
+
+        #details {
+
+        }
+
+        #price{
+            text-align: right;
+            margin-left: auto;
+
+            select{
+                font-size: 18px;
+                height: 30px;
+            }
+
+            button {
+                font-size: 14px;
+                border: none;
+                margin-top: 10px;
+                background: #7a8cb6;
+                font-weight: 500;
+                padding: 0 16px;
+                color: #fff;
+                cursor: pointer;
+                border-radius: 6px;
+                outline: none;
+                display: inline-block;
+                height: 36px;
+                box-shadow: rgba(000,000,000,0.3) 0px 1px 2px;
+                text-transform: uppercase;
+                min-width: 64px;
+            }
+            
+            button:hover {
+                background: #6e7696;
+                box-shadow: rgba(000,000,000,0.3) 0px 2px 4px;
+            }            
+        }
+
+        .product5, .product6{
+            color: #fff;
+        }
+    }    
 }
+
+
