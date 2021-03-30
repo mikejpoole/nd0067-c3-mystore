@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
@@ -16,16 +15,13 @@ export class BrowseComponent implements OnInit {
   ];
 
   constructor(
-    // private router: Router,
-    // private route: ActivatedRoute,
     private productService: ProductService
   ) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(products => {
       this.products = products;
+      // console.log(this.products);
     });
-
-    console.log(this.products);
   }
 }
