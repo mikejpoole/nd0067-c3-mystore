@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Product } from '../models/product.model';
 import { ProductService } from '../services/product.service';
@@ -8,18 +9,25 @@ import { ProductService } from '../services/product.service';
   templateUrl: './product.component.html'
 })
 export class ProductComponent implements OnInit {
-  products: Product[] = [];
+  productId: number;
+  product: Product;
 
   constructor(
-    private productService: ProductService
-  ) {}
+    private productService: ProductService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(products => {
-      this.products = products;
+    this.route.paramMap.subscribe(params => {
+      this.productId = Number(params.get('id'));
+      this.getProduct();
     });
+  }
 
-    console.log(this.products);
+  getProduct(): void {
+    this.productService.getProducts().subscribe((res) => (
+      this.product = res[this.productId - 1]
+    ));
   }
 
 }
