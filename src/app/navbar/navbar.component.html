@@ -3,8 +3,11 @@
         <h1><a routerLink="/" 
                 title="Return to the store homepage">My Store</a></h1>
 
-        <a routerLink="cart" 
+        <a routerLink="/cart" 
             id="cartLink"
-            title="Go to your cart"><i class="fas fa-shopping-cart"></i></a>
+            title="Go to your cart"><i class="fas fa-shopping-cart"></i>
+            <span class="badge"
+                *ngIf="this.cart.totalQuantity > 0"
+            >{{ this.cart.totalQuantity }}</span></a>
     </nav>
 </header>
