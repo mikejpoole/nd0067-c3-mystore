@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+<main>
+    <h1>Cart</h1>
+
+    <div id="cartWrapper" 
+        *ngIf="items.length > 0; else emptyCartWrapper">
+        Your cart contains:
+
+        <div *ngFor="let item of items">
+            {{item.name}}
+        </div>
+
+        The total price is &pound;{{cart.totalPrice | number:'1.2-2'}} please.
+    </div>
+
+    <ng-template #emptyCartWrapper>Your cart is empty</ng-template>
+</main>
