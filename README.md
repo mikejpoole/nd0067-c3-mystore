@@ -1,6 +1,6 @@
 # MyStore
 
-This basic Angular app has been created for course 3 (Angluar Fundamentals) in the Full stack JavaScript nanodegree.
+This basic Angular app has been created for course 3 (Angular Fundamentals) in the Full stack JavaScript nanodegree.
 
 ## Copyright
 
