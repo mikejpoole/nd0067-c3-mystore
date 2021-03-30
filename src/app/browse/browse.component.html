@@ -1,1 +1,11 @@
-<main>This is the browse component.</main>
+<main>
+    <h1>Browse our Products</h1>
+
+    <table *ngIf="products.length > 0">
+        <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>&pound;{{product.price}}</td>
+        </tr>
+    </table>
+
+</main>
