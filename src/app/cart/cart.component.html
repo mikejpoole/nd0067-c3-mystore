@@ -15,12 +15,14 @@
                 <th style="text-align: right;">Total Price</th>
             </tr>
 
-            <tr *ngFor="let item of items">
+            <tr *ngFor="let item of items; let i = index;">
                 <td>{{item.name}}</td>
                 <td>{{item.quantity}}</td>
                 <td style="text-align: right;">&pound;{{item.price}}</td>
                 <td style="text-align: right;">&pound;{{item.totalPrice}}</td>
-                <td><i class="far fa-trash-alt" title="Remove {{item.name}} from your cart"></i></td>
+                <td><i class="far fa-trash-alt" 
+                        title="Remove {{item.name}} from your cart"
+                        (click)="cartService.removeProductFromCart(i)"></i></td>
             </tr>
 
             <tr>

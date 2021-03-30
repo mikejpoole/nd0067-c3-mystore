@@ -40,8 +40,6 @@ body{
                 margin-right: 20px;
 
                 .badge {
-                    // padding-left: 9px;
-                    // padding-right: 9px;
                     border-radius: 10px;
                     font-size: 14px;
                     background: #ff0000;
@@ -49,7 +47,7 @@ body{
                     padding: 0 6px;
                     vertical-align: top;
                     margin-left: -15px;                     
-                  }                
+                }
             }
         }
     }
@@ -109,15 +107,7 @@ body{
                     transform: scale(1.1);
                 }
             }
-
-            // .product-cell:hover{
-            //     transform: scale(1.015);
-            // }
         }
-
-
-
-
 
         // Cart
         table{
@@ -127,8 +117,12 @@ body{
             th{
                 text-align: left;
             }
-        }
 
+            i{
+              cursor: pointer; 
+              margin-left: 10px; 
+            }
+        }
 
         // Checkout
 
@@ -138,7 +132,6 @@ body{
 
 
     }
-
 
     // Product Page
     #product{
@@ -188,7 +181,5 @@ body{
         .product5, .product6{
             color: #fff;
         }
-    }    
+    }
 }
-
-

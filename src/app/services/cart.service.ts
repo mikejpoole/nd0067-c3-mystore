@@ -17,19 +17,16 @@ export class CartService {
   ) {}
 
   getCart(): Cart {
-    console.log('Getting the cart', this.cart);
     return this.cart;
   }
 
-  addProductToCart(product: Product, quantity: number): Cart{
-    console.log('Adding', quantity, 'of', product.name, 'to cart');
+  addProductToCart(product: Product, quantity: number): void{
+    // console.log('Adding', quantity, 'of', product.name, 'to cart');
     product.quantity = quantity;
     product.totalPrice = product.price * quantity;
     this.cart.products.push(product);
     this.cart.totalQuantity += quantity;
     this.cart.totalPrice += product.totalPrice;
-
-    console.log(this.cart);
 
     let message = '';
 
@@ -39,10 +36,19 @@ export class CartService {
       message = 'A ' + product.name + ' has been added to your cart.';
     }
 
-
     this.toastr.success(message);
-
-    return this.cart;
   }
 
+  removeProductFromCart(index: number): void{
+    console.log('Removing', index, 'from cart');
+    const item = this.cart.products[index];
+
+    // Reduce total price and quantity
+    if (item.totalPrice) { this.cart.totalPrice -= item.totalPrice; }
+    if (item.quantity) { this.cart.totalQuantity -= item.quantity; }
+
+    this.toastr.success('The ' + item.name + ' has been removed from your cart.');
+
+    this.cart.products.splice(index, 1);
+  }
 }
