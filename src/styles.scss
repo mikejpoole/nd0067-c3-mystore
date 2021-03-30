@@ -110,17 +110,32 @@ body{
         }
 
         // Cart
-        table{
-            margin: 20px 0px;
-            width: 100%;
+        #cartWrapper{
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            
+            #leftColumn{
+                table{
+                    margin: 20px 0px;
+                    width: 100%;
 
-            th{
-                text-align: left;
+                    th{
+                        text-align: left;
+                    }
+
+                    i{
+                    cursor: pointer; 
+                    margin-left: 10px; 
+                    }
+                }
             }
 
-            i{
-              cursor: pointer; 
-              margin-left: 10px; 
+            #rightColumn{
+                label{
+                    display: block;
+                }
+
             }
         }
 

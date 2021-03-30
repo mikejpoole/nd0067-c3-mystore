@@ -5,31 +5,54 @@
 
     <div id="cartWrapper" 
         *ngIf="items.length > 0; else emptyCartWrapper">
-        Your cart contains:
 
-        <table>
-            <tr>
-                <th>Product</th>
-                <th style="text-align: center;">Quantity</th>                
-                <th style="text-align: right;">Price Each</th>
-                <th style="text-align: right;">Total Price</th>
-            </tr>
 
-            <tr *ngFor="let item of items; let i = index;">
-                <td>{{item.name}}</td>
-                <td style="text-align: center;">{{item.quantity}}</td>
-                <td style="text-align: right;">&pound;{{item.price | number:'1.2-2'}}</td>
-                <td style="text-align: right;">&pound;{{item.totalPrice | number:'1.2-2'}}</td>
-                <td><i class="far fa-trash-alt" 
-                        title="Remove {{item.name}} from your cart"
-                        (click)="cartService.removeProductFromCart(i)"></i></td>
-            </tr>
+        <div id="leftColumn">
+            Your cart contains:
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th style="text-align: center;">Quantity</th>                
+                    <th style="text-align: right;">Price Each</th>
+                    <th style="text-align: right;">Total Price</th>
+                </tr>
 
-            <tr>
-                <td colspan="4" style="text-align: right; font-weight: bold;">The total price is: &pound;{{cart.totalPrice | number:'1.2-2'}}</td>
-                <td></td>
-            </tr>
-        </table>
+                <tr *ngFor="let item of items; let i = index;">
+                    <td>{{item.name}}</td>
+                    <td style="text-align: center;">{{item.quantity}}</td>
+                    <td style="text-align: right;">&pound;{{item.price | number:'1.2-2'}}</td>
+                    <td style="text-align: right;">&pound;{{item.totalPrice | number:'1.2-2'}}</td>
+                    <td><i class="far fa-trash-alt" 
+                            title="Remove {{item.name}} from your cart"
+                            (click)="cartService.removeProductFromCart(i)"></i></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" style="text-align: right; font-weight: bold;">The total price is: &pound;{{cart.totalPrice | number:'1.2-2'}}</td>
+                    <td></td>
+                </tr>
+            </table>           
+        </div>
+        
+        <div id="rightColumn">
+            <h2>Checkout</h2>
+
+            <form [formGroup]="form" (ngSubmit)="checkout()" novalidate>
+            <label>
+                First Name: <input type="text" formControlName="firstname" required>
+                <!-- <div *ngIf="form.controls.name.errors" class="error">
+                    <div *ngIf="form.controls.name.errors.required">
+                        Your firstname is required.
+                    </div>
+                </div> -->
+
+            </label>
+
+            <button>Checkout</button>
+            </form>
+        </div>
+
+
     </div>
 
     <ng-template #emptyCartWrapper>
