@@ -40,14 +40,14 @@
                 <div>
                     <input formControlName="firstname" placeholder="First name" required>
                     <span *ngIf="form.controls.firstname.errors">
-                        <i *ngIf="form.controls.firstname.errors.required" class="fas fa-exclamation-triangle" title="First name is required"></i>
+                        <i *ngIf="form.controls.firstname.errors.required || form.controls.firstname.errors.minlength" class="fas fa-exclamation-triangle" title="First name of at least 2 characters is required"></i>
                     </span>
                 </div>
 
                 <div>
                     <input formControlName="surname" placeholder="Surname" required>
                     <span *ngIf="form.controls.surname.errors">
-                        <i *ngIf="form.controls.surname.errors.required" class="fas fa-exclamation-triangle" title="Surname is required"></i>
+                        <i *ngIf="form.controls.surname.errors.required || form.controls.surname.errors.minlength" class="fas fa-exclamation-triangle" title="Surname of at least 2 characters is required"></i>
                     </span>
                 </div>
 

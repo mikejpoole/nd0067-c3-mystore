@@ -41,8 +41,8 @@ export class CartComponent implements OnInit {
 
     if (!this.orderComplete) {
       this.form = new FormGroup({
-        firstname: new FormControl(this.user.firstname, [Validators.required]),
-        surname: new FormControl(this.user.surname, [Validators.required]),
+        firstname: new FormControl(this.user.firstname, [Validators.required, Validators.minLength(2)]),
+        surname: new FormControl(this.user.surname, [Validators.required, Validators.minLength(2)]),
         email: new FormControl(this.user.email, [Validators.required]),
         addressLine1: new FormControl(this.user.addressLine1, [Validators.required]),
         addressLine2: new FormControl(this.user.addressLine2),
