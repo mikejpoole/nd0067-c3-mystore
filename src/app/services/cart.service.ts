@@ -51,4 +51,10 @@ export class CartService {
 
     this.cart.products.splice(index, 1);
   }
+
+  getEmptyCart(): Cart {
+    console.log('Emptying the cart...');
+    this.cart = new ActiveCart();
+    return this.cart;
+  }
 }
