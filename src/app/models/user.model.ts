@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-export interface User {
+export class User {
+    // public static EMPTY_USER = new User();
+
     firstname: string;
     surname: string;
     email: string;
