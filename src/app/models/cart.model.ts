@@ -14,4 +14,5 @@ export class ActiveCart implements Cart {
     products: Product[] = [];
     totalQuantity = 0;
     totalPrice = 0;
+    customer: User = new User();
 }
