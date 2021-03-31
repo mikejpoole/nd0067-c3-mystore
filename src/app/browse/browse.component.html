@@ -8,7 +8,8 @@
             title="View more information about the {{product.name}}"><img src="{{product.url}}"></a>
             <!-- <br>{{product.description}} -->
             <br>&pound;{{product.price}}
-            <br><button title="Add {{product.name}} to the cart"
+            <br><button class="add-button"
+                title="Add {{product.name}} to the cart"
                 (click)="cartService.addProductToCart(product, 1)"><i class="fas fa-cart-plus"></i></button>
         </div>
     </div>
