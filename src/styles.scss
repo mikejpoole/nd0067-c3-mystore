@@ -14,6 +14,34 @@ body{
         margin: 0;
     }
 
+    button:not(.add-button) {
+        font-size: 14px;
+        border: none;
+        margin-top: 10px;
+        background: #7a8cb6;
+        font-weight: 500;
+        padding: 0 16px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 6px;
+        outline: none;
+        display: inline-block;
+        height: 36px;
+        box-shadow: rgba(000,000,000,0.3) 0px 1px 2px;
+        text-transform: uppercase;
+        min-width: 64px;
+    }
+    
+    button:not(.add-button):hover {
+        background: #6e7696;
+        box-shadow: rgba(000,000,000,0.3) 0px 2px 4px;
+    }
+    
+    button:disabled, button:disabled:hover {
+        background: $mediumGrey;
+        cursor: not-allowed;
+    }
+
     header, main{
         padding: 20px;
         border-bottom-left-radius: 6px;
@@ -86,7 +114,7 @@ body{
                     box-shadow: 0px 1px 2px $grey;
                 }
 
-                button{
+                .add-button{
                     width: 50px;
                     height: 50px;
                     border: 1px solid $mediumGrey;
@@ -102,7 +130,7 @@ body{
                     }
                 }
 
-                button:hover{
+                .add-button:hover{
                     background: $mediumGrey;
                     transform: scale(1.1);
                 }
@@ -132,8 +160,16 @@ body{
             }
 
             #rightColumn{
-                label{
-                    display: block;
+                form{
+                    input{
+                        font-size: 14px;
+                        width: 250px;
+                    }
+
+                    .fa-exclamation-triangle{
+                        margin-left: 6px;
+                        color: #f00;
+                    }
                 }
 
             }
@@ -169,28 +205,7 @@ body{
                 height: 30px;
             }
 
-            button {
-                font-size: 14px;
-                border: none;
-                margin-top: 10px;
-                background: #7a8cb6;
-                font-weight: 500;
-                padding: 0 16px;
-                color: #fff;
-                cursor: pointer;
-                border-radius: 6px;
-                outline: none;
-                display: inline-block;
-                height: 36px;
-                box-shadow: rgba(000,000,000,0.3) 0px 1px 2px;
-                text-transform: uppercase;
-                min-width: 64px;
-            }
-            
-            button:hover {
-                background: #6e7696;
-                box-shadow: rgba(000,000,000,0.3) 0px 2px 4px;
-            }            
+           
         }
 
         .product5, .product6{
