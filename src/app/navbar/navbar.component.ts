@@ -1,22 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
-import { ProductService } from '../services/product.service';
-import { CartService } from '../services/cart.service';
-import { Cart } from '../models/cart.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
-  public cart: Cart;
+  // public cart: Cart;
+  @Input() totalQuantity: any;
 
   constructor(
-    private cartService: CartService
   ){ }
 
   ngOnInit(): void {
-    this.cart = this.cartService.getCart();   // This logic should be shared between components
+    // this.cart = this.cartService.getCart();   // Removed because using @Input decorator to get from parent instead
   }
 
 }

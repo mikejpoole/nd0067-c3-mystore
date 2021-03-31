@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [totalQuantity]="cartService.getCart().totalQuantity"></app-navbar>
 
 <main *ngIf="product" id="product" style="background-image: url('{{product.url}}');">
     <div id="detail" class="product{{product.id}}">

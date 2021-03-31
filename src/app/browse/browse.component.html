@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [totalQuantity]="cartService.getCart().totalQuantity"></app-navbar>
 
 <main>
     <div id="productGrid" *ngIf="products.length > 0">
