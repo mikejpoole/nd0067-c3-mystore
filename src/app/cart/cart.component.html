@@ -34,67 +34,9 @@
         </div>
         
         <div id="rightColumn">
-            <h2>Checkout</h2>
+            <app-checkoutform [totalQuantity]="cart.totalQuantity"></app-checkoutform>
 
-            <form [formGroup]="form" (ngSubmit)="checkout()" novalidate>
-                <div>
-                    <input formControlName="firstname" placeholder="First name" required>
-                    <span *ngIf="form.controls.firstname.errors">
-                        <i *ngIf="form.controls.firstname.errors.required || form.controls.firstname.errors.minlength" class="fas fa-exclamation-triangle" title="First name of at least 2 characters is required"></i>
-                    </span>
-                </div>
-
-                <div>
-                    <input formControlName="surname" placeholder="Surname" required>
-                    <span *ngIf="form.controls.surname.errors">
-                        <i *ngIf="form.controls.surname.errors.required || form.controls.surname.errors.minlength" class="fas fa-exclamation-triangle" title="Surname of at least 2 characters is required"></i>
-                    </span>
-                </div>
-
-                <div>
-                    <input formControlName="email" placeholder="Email address" type="email" required>
-                    <span *ngIf="form.controls.email.errors">
-                        <i *ngIf="form.controls.email.errors.required" class="fas fa-exclamation-triangle" title="Email Address is required"></i>
-                    </span>
-                </div>
-
-                <div>
-                    <input formControlName="addressLine1" placeholder="Address line" required>
-                    <span *ngIf="form.controls.addressLine1.errors">
-                        <i *ngIf="form.controls.addressLine1.errors.required" class="fas fa-exclamation-triangle" title="Address line is required"></i>
-                    </span>
-                </div>
-
-                <div>
-                    <input formControlName="addressLine2" placeholder="Address line">
-                </div>
-
-                <div>
-                    <input formControlName="addressLine3" placeholder="Address line">
-                </div>                
-
-                <div>
-                    <input formControlName="town" placeholder="Town" required>
-                    <span *ngIf="form.controls.town.errors">
-                        <i *ngIf="form.controls.town.errors.required" class="fas fa-exclamation-triangle" title="Town is required"></i>
-                    </span>
-                </div>
-
-                <div>
-                    <input formControlName="region" placeholder="Region">
-                </div>                
-
-                <div>
-                    <input formControlName="postcode" placeholder="Postcode" required style="width: 70px;">
-                    <span *ngIf="form.controls.postcode.errors">
-                        <i *ngIf="form.controls.postcode.errors.required" class="fas fa-exclamation-triangle" title="Postcode is required"></i>
-                    </span>
-                </div>
-
-                <div style="text-align: right;">
-                    <button [disabled]="form.invalid">Checkout</button>
-                </div>
-            </form>
+            
         </div>
     </div>
 
