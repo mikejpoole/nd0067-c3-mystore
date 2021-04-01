@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 
 import { Cart, ActiveCart } from '../models/cart.model';
 import { Product } from '../models/product.model';
-
-import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +15,14 @@ export class CartService {
   private cart: Cart = new ActiveCart();
 
   constructor(
+    private http: HttpClient,
     private toastr: ToastrService
   ) {}
+
+  getProducts(): Observable<Product[]>{
+    // console.log('Getting products');
+    return this.http.get<Product[]>('../assets/data.json');
+  }
 
   getCart(): Cart {
     return this.cart;
