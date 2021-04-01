@@ -5,18 +5,7 @@ import { User } from '../models/user.model';
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html'
 })
-export class NewsletterComponent implements OnInit {
 
+export class NewsletterComponent {
   public user: User = new User();
-
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.user);
-  }
-
-  signup(): void{
-    console.log('signing up...');
-  }
-
 }

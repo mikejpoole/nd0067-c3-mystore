@@ -1,12 +1,33 @@
 <aside id="newsletterWrapper">
-    <form #myForm="ngForm" (ngSubmit)="signup()">
+    <form #myForm="ngForm">
         <h2>Our Newsletter</h2>
         If you would like to receive our newsletter please type your email address in this outdated template driven form:
-        <input type="email" name="email" 
-            [(ngModel)]="user.email" required>
 
-        <div *ngIf="user.email">
-            We will send future newsletters to {{user.email}}
+        <div>
+            <!-- Note to reviewer: Banana in box below is syntactic sugar for ngModelChange -->
+            <input type="email" 
+                    name="email" 
+                    #email="ngModel"
+                    [(ngModel)]="user.email" 
+                    placeholder="example@email.com" 
+                    required minlength="6" maxlength="100">
+
+            <span *ngIf="email.invalid && (email.dirty || email.touched)">
+                <span *ngIf="email.errors" class="error">
+                    <span *ngIf="email.errors.minlength">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Email must be at least 7 characters long.
+                    </span>
+                    <span *ngIf="email.errors.maxlength">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Email cannot be more than 100 characters long.
+                    </span>
+                </span>
+            </span>
+
+            <span *ngIf="user.email && !email.errors">
+                We will send future newsletters to {{user.email}}
+            </span>
         </div>
     </form>
 </aside>
