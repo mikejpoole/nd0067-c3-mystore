@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 // Required for ngx-toastr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CheckoutformComponent } from './checkoutform/checkoutform.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     BrowseComponent,
     ProductComponent,
     NavbarComponent,
-    CartComponent
+    CartComponent,
+    CheckoutformComponent
   ],
   imports: [
     AppRoutingModule,
