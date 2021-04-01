@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutformComponent } from './checkoutform/checkoutform.component';
 import { SuccessComponent } from './success/success.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SuccessComponent } from './success/success.component';
     NavbarComponent,
     CartComponent,
     CheckoutformComponent,
-    SuccessComponent
+    SuccessComponent,
+    NewsletterComponent
   ],
   imports: [
     AppRoutingModule,

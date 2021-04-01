@@ -10,7 +10,7 @@ body{
     background: $lightGrey;
     margin: 0;
 
-    h1{
+    h1, h2{
         margin: 0;
     }
 
@@ -211,6 +211,22 @@ body{
 
         .product5, .product6{
             color: #fff;
+        }
+    }
+
+    // Newsletter
+    #newsletterWrapper{
+        background: #fff;
+        padding: 10px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+
+        form{
+            margin: 0 auto;
+            max-width: 1000px;
         }
     }
 }
