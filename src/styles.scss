@@ -227,6 +227,12 @@ body{
         form{
             margin: 0 auto;
             max-width: 1000px;
+
+            input{
+                font-size: 20px;
+                padding: 6px;   
+                width: 350px;         
+            }
         }
     }
 }

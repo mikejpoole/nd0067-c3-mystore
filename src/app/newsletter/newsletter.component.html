@@ -1,7 +1,12 @@
 <aside id="newsletterWrapper">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="signup()">
         <h2>Our Newsletter</h2>
         If you would like to receive our newsletter please type your email address in this outdated template driven form:
-        
+        <input type="email" name="email" 
+            [(ngModel)]="user.email" required>
+
+        <div *ngIf="user.email">
+            We will send future newsletters to {{user.email}}
+        </div>
     </form>
 </aside>
