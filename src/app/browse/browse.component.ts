@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { Product } from '../models/product.model';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-browse',
@@ -8,6 +9,7 @@ import { Product } from '../models/product.model';
 })
 export class BrowseComponent implements OnInit {
   products: Product[] = [];
+  addItemForm: FormGroup;
 
   constructor(
     public cartService: CartService
@@ -16,7 +18,15 @@ export class BrowseComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(products => {
       this.products = products;
-      // console.log(this.products);
     });
+
+    this.addItemForm = new FormGroup({
+      product: new FormControl(),
+      quantity: new FormControl()
+    });
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.addProductToCart(product, +this.addItemForm.value.quantity);
   }
 }

@@ -7,7 +7,7 @@
     <div id="price" class="product{{product.id}}">
         &pound;{{product.price}} each
 
-        <form [formGroup]="form" (ngSubmit)="addToCart()">
+        <form [formGroup]="addItemForm" (ngSubmit)="addToCart()">
             Quantity
             <select formControlName="quantity">
               <option *ngFor="let item of [].constructor(10); let i = index" 

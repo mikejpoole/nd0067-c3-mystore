@@ -134,6 +134,15 @@ body{
                     background: $mediumGrey;
                     transform: scale(1.1);
                 }
+
+                .price-wrapper{
+                    display: flex;
+                }
+
+                form{
+                    text-align: right; 
+                    margin-left: auto;
+                }
             }
         }
 

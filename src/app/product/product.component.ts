@@ -13,7 +13,7 @@ import { Product } from '../models/product.model';
 export class ProductComponent implements OnInit {
   productId: number;
   product: Product;
-  form: FormGroup;
+  addItemForm: FormGroup;
 
   constructor(
     public cartService: CartService,
@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
       this.getProduct();
     });
 
-    this.form = new FormGroup({
+    this.addItemForm = new FormGroup({
       quantity: new FormControl()
     });
   }
@@ -38,11 +38,6 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(): void {
-    // console.log('Adding to cart');
-    // console.log(this.form);
-
-    const quantity: number = +this.form.value.quantity;
-    // console.log(quantity);
-    this.cartService.addProductToCart(this.product, quantity);
+    this.cartService.addProductToCart(this.product, +this.addItemForm.value.quantity);
   }
 }
