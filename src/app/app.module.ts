@@ -14,6 +14,7 @@ import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutformComponent } from './checkoutform/checkoutform.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CheckoutformComponent } from './checkoutform/checkoutform.component';
     ProductComponent,
     NavbarComponent,
     CartComponent,
-    CheckoutformComponent
+    CheckoutformComponent,
+    SuccessComponent
   ],
   imports: [
     AppRoutingModule,

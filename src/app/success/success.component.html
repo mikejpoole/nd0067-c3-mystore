@@ -1,0 +1,11 @@
+<main *ngIf="user.firstname > ''">
+    <h1>Thank you {{ user.firstname }}</h1>
+    <p>Thank you for your order.<br>Your item(s) will be delivered to 
+        {{ user.addressLine1 }},
+        {{ user.addressLine2 }},
+        {{ user.addressLine3 }},
+        {{ user.town }},
+        {{ user.region }},
+        {{ user.postcode }}.
+    </p>
+</main>

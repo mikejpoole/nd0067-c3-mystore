@@ -1,4 +1,4 @@
-<main *ngIf="!orderComplete">
+<main>
     <h1>Cart</h1>
 
     <div id="cartWrapper" 
@@ -39,18 +39,4 @@
     <ng-template #emptyCartWrapper>
         <p>Your cart is empty.</p>
         <p>Would you like to <a routerLink="/">take a look at the products</a>?</p></ng-template>
-</main>
-
-<main *ngIf="orderComplete && items.length > 0">
-    <h1>Success</h1>
-    <p>Thank you for your order {{ user.firstname }}.</p>
-    <p>Your credit card will be billed for &pound;{{totalPrice | number:'1.2-2'}} 
-        and your item(s) will be delivered to 
-        {{ user.addressLine1 }},
-        {{ user.addressLine2 }},
-        {{ user.addressLine3 }},
-        {{ user.town }},
-        {{ user.region }},
-        {{ user.postcode }}.
-    </p>
 </main>
