@@ -32,9 +32,7 @@
         </div>
         
         <div id="rightColumn">
-            <app-checkoutform [totalQuantity]="cart.totalQuantity"></app-checkoutform>
-
-            
+            <app-checkoutform [cart]="cart" (cartEvent)="updateCart(cart)"></app-checkoutform>
         </div>
     </div>
 

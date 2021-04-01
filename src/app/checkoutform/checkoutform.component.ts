@@ -1,27 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+
 import { Cart } from '../models/cart.model';
 import { User } from '../models/user.model';
-import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-checkoutform',
   templateUrl: './checkoutform.component.html'
 })
 export class CheckoutformComponent implements OnInit {
-  @Input() totalQuantity: any;
-  public cart: Cart;
+  @Input() cart: Cart;
+  @Output() cartEvent = new EventEmitter<Cart>();
+
   public form: FormGroup;
   public user: User;
 
-  constructor(
-    public cartService: CartService,
-    private router: Router,
-  ) { }
-
   ngOnInit(): void {
-    this.cart = this.cartService.getCart();
+    console.log(this.cart);
     if (this.cart.customer) { this.user = this.cart.customer; }
 
     this.form = new FormGroup({
@@ -38,7 +33,7 @@ export class CheckoutformComponent implements OnInit {
   }
 
   checkout(): void{
-    // console.log('Checking out...', this.form.value.firstname);
+    console.log('Checking out...', this.form.value.firstname);
 
     if (this.cart.customer) {
       this.cart.customer.firstname    = this.form.value.firstname;
@@ -53,8 +48,7 @@ export class CheckoutformComponent implements OnInit {
 
       console.log(this.cart.customer);
 
-      this.router.navigate(['/cart/success']);
+      this.cartEvent.emit(this.cart);
     }
   }
-
 }
